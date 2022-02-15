@@ -1,0 +1,24 @@
+﻿:{Solution Name}:.Entity\\Databases
+:{Solution Name}:.Entity\\DTOs
+:{Solution Name}:.Entity\\DTOs\\Requests
+:{Solution Name}:.Entity\\DTOs\\Responses
+:{Solution Name}:.Entity\\Enums
+:{Solution Name}:.Entity\\Mapping
+:{Solution Name}:.Entity\\Mapping\\Requests.cs
+:{accessmodifier}:public
+:{usings}:AutoMapper|System.Linq
+:{inherit}:Profile
+:{Solution Name}:.Entity\\Mapping\\Responses.cs
+:{accessmodifier}:public
+:{Solution Name}:.Business\\Abstract
+:{Solution Name}:.Business\\DependencResolver
+:{Solution Name}:.Business\\Helper
+:{Solution Name}:.Business\\Helper\\AppSettingsHelper.cs
+:{usings}:Microsoft.Extensions.Configuration|System|System.IO
+:{method}:public static IConfigurationSection GetSection \\n\\t\\t{ \t\t\tvar envName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"); \n\t\t\t var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile($"appsettings.{envName ?? "Production"}.json", true, true); \n\t\t\t var section = builder.Build().GetSection(sectionName); \n\t\t\t if (section == null || !section.Exists()) \n\t\t\t { \n\t\t\t\t  throw new Exception("There is no related section found in config file"); \n\t\t\t } \n\t\t\t return section;\n\t\t }
+:{Solution Name}:.Business\\Helper\\ClaimsHelper.cs
+:{accessmodifier}:public
+:{Solution Name}:.Business\\Services
+:{Solution Name}:.Business\\ValidationRules
+
+

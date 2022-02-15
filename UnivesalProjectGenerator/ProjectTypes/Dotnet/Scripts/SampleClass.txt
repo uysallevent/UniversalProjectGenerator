@@ -1,0 +1,10 @@
+﻿namespace :{namespace}:
+{
+	:{accessmodifier}: class :{classname}: :{inherit}:
+	{
+		public :{classname}:()
+		{
+		:{method}:
+		}
+	}
+}

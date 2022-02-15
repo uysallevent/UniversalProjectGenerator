@@ -1,0 +1,49 @@
+﻿dotnet new sln -o :{Solution Name}:
+dotnet new web -o :{Solution Name}:\:{Solution Name}:.Api
+dotnet new classlib -lang 'C#' -f netstandard2.0  -o :{Solution Name}:\:{Solution Name}:.Entity
+dotnet new classlib -lang 'C#' -f netstandard2.0  -o :{Solution Name}:\:{Solution Name}:.Dal
+dotnet new classlib -lang 'C#' -f netstandard2.0  -o :{Solution Name}:\:{Solution Name}:.Business
+dotnet new classlib -lang 'C#' -f netstandard2.0  -o :{Solution Name}:\:{Solution Name}:.Core
+cd :{Solution Name}:
+dotnet sln add :{Solution Name}:.Api\:{Solution Name}:.Api.csproj
+dotnet sln add :{Solution Name}:.Entity\:{Solution Name}:.Entity.csproj
+dotnet sln add :{Solution Name}:.Dal\:{Solution Name}:.Dal.csproj
+dotnet sln add :{Solution Name}:.Business\:{Solution Name}:.Business.csproj
+dotnet sln add :{Solution Name}:.Core\:{Solution Name}:.Core.csproj
+
+cd :{Solution Name}:.Api
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection --version 8.1.1
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 5.0.5
+dotnet add package Microsoft.AspNetCore.Mvc.Versioning --version 5.0.0
+dotnet add package Serilog.AspNetCore --version 4.1.0
+dotnet add package Serilog.Sinks.MSSqlServer --version 5.6.0
+dotnet add package Swashbuckle.AspNetCore --version 6.1.2
+
+cd..
+cd :{Solution Name}:.Entity
+dotnet add package AutoMapper --version 10.1.1
+dotnet add package Newtonsoft.Json --version 13.0.1
+
+cd.. 
+cd :{Solution Name}:.Dal
+dotnet add package Microsoft.EntityFrameworkCore --version 3.1.14
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 3.1.14
+dotnet add package Microsoft.Extensions.Configuration.Json --version 3.1.14
+dotnet add package Dapper --version 2.0.78
+
+cd.. 
+cd :{Solution Name}:.Business
+dotnet add package Autofac.Extras.DynamicProxy --version 6.0.0
+dotnet add package AutoMapper --version 10.1.1
+dotnet add package FluentValidation --version 10.0.2
+dotnet add package Dapper --version 2.0.78
+dotnet add package Newtonsoft.Json --version 13.0.1
+
+cd.. 
+cd :{Solution Name}:.Core
+dotnet add package Autofac.Extras.DynamicProxy --version 6.0.0
+dotnet add package FluentValidation --version 10.0.2
+dotnet add package Microsoft.EntityFrameworkCore --version 3.1.14
+dotnet add package Newtonsoft.Json --version 13.0.1
+dotnet add package System.IdentityModel.Tokens.Jwt --version 6.10.1
+dotnet add package Serilog.AspNetCore --version 4.1.0

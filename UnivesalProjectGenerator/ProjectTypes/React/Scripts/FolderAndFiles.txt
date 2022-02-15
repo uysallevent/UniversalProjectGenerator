@@ -1,0 +1,6 @@
+﻿src\container
+src\component
+src\redux\reducers\initialTypes.js
+src\redux\reducers\rootReducer.js
+src\redux\actions\actionTypes.js
+src\redux\actions\store.js
